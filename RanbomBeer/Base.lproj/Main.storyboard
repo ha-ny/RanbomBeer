@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5jD-08-ZPt">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--오늘의 추천 맥주-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RanbomBeer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uid-4V-fc2">
+                                <rect key="frame" x="20" y="101" width="388" height="388"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uid-4V-fc2" secondAttribute="height" multiplier="1:1" id="ZOn-Bx-6BI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FK-w0-Iw5">
+                                <rect key="frame" x="20" y="499" width="388" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Sqs-8H-n0k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p9-ZK-mhd">
+                                <rect key="frame" x="20" y="559" width="388" height="238"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3b-hq-ODa">
+                                <rect key="frame" x="70" y="817" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="y5U-LP-a9d"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="맥주 추천 받기"/>
+                                <connections>
+                                    <action selector="ranbomButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mbr-2Z-K5d"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uid-4V-fc2" secondAttribute="trailing" constant="20" id="2BD-8O-jvQ"/>
+                            <constraint firstItem="6p9-ZK-mhd" firstAttribute="leading" secondItem="5FK-w0-Iw5" secondAttribute="leading" id="C5B-cv-CgT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N3b-hq-ODa" secondAttribute="bottom" constant="20" id="Nod-wc-g3h"/>
+                            <constraint firstItem="6p9-ZK-mhd" firstAttribute="trailing" secondItem="5FK-w0-Iw5" secondAttribute="trailing" id="PFO-Um-TI2"/>
+                            <constraint firstItem="N3b-hq-ODa" firstAttribute="top" secondItem="6p9-ZK-mhd" secondAttribute="bottom" constant="20" id="gWg-wj-Mc1"/>
+                            <constraint firstItem="uid-4V-fc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i80-Lw-RaE"/>
+                            <constraint firstItem="5FK-w0-Iw5" firstAttribute="trailing" secondItem="uid-4V-fc2" secondAttribute="trailing" id="kMm-mp-Wru"/>
+                            <constraint firstItem="uid-4V-fc2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="mEQ-dh-BbV"/>
+                            <constraint firstItem="N3b-hq-ODa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="mYG-qN-Nwk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N3b-hq-ODa" secondAttribute="trailing" constant="70" id="miG-6J-Ov8"/>
+                            <constraint firstItem="6p9-ZK-mhd" firstAttribute="top" secondItem="5FK-w0-Iw5" secondAttribute="bottom" constant="30" id="nEa-4d-oFe"/>
+                            <constraint firstItem="5FK-w0-Iw5" firstAttribute="leading" secondItem="uid-4V-fc2" secondAttribute="leading" id="qhN-cO-XH0"/>
+                            <constraint firstItem="5FK-w0-Iw5" firstAttribute="top" secondItem="uid-4V-fc2" secondAttribute="bottom" constant="10" id="qyc-1c-Irr"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="오늘의 추천 맥주" id="aiZ-On-4b9"/>
+                    <connections>
+                        <outlet property="beerDescriptionLabel" destination="6p9-ZK-mhd" id="HyU-L8-tiM"/>
+                        <outlet property="beerImageView" destination="uid-4V-fc2" id="dht-D4-fIC"/>
+                        <outlet property="beerNameLabel" destination="5FK-w0-Iw5" id="eih-5I-TWG"/>
+                        <outlet property="randomButton" destination="N3b-hq-ODa" id="QC9-Zq-1cA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1040.4580152671756" y="-27.464788732394368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x9r-yI-114">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5jD-08-ZPt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZqV-oK-oOi">
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NjZ-gB-92x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWe-ry-DfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.74045801526717" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
