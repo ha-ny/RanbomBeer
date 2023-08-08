@@ -19,7 +19,6 @@ struct BeerData{
 class ListTableViewController: UITableViewController {
 
     static let identifier = "ListTableViewController"
-    let nullImage_url = URL(string: "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbnOSHZ%2FbtrLTB8V5DQ%2FnlaUCKg7kzbp7PbVKy63Qk%2Fimg.png")
 
     var beerList: [BeerData] = []
     
